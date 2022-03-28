@@ -1,0 +1,24 @@
+{
+  "name": "riesenia/kurier123",
+  "description": "123Kurier API PHP client implementation",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jakub Macaj",
+      "email": "jakub.macaj@riesenia.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "guzzlehttp/guzzle": "^7.4"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer" : "~2.0",
+    "rshop/php-cs-fixer-config": "~2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Riesenia\\Kurier123\\": "src/"
+    }
+  }
+}

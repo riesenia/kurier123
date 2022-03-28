@@ -1,0 +1,14 @@
+<?php
+$header = 'This file is part of riesenia/kurier123 package.
+
+(c) RIESENIA.com';
+
+$config = new Rshop\CS\Config\Rshop($header);
+
+$config->setStrict()
+    ->setRule('native_function_invocation', true)
+    ->getFinder()
+    ->in(__DIR__)
+    ->exclude('vendor');
+
+return $config;

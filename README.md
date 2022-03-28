@@ -1,5 +1,6 @@
 # 123Kurier API client
-123Kurier API client implemetation. See 123Kurier api documentation for details.
+123Kurier API client implemetation. See 123Kurier official API documentation for details.
+
 ## Installation
 Install the latest version using `composer require riesenia/kurier123`
 

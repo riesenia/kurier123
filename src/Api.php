@@ -54,7 +54,7 @@ class Api
      */
     public function createShipment(array $shipment): ?array
     {
-        return $this->_callApi('/order', $shipment);
+        return $this->_callApi('/order', ['orders' => $shipment]);
     }
 
     /**
@@ -112,7 +112,11 @@ class Api
     protected function _callApi(string $action, array $data = []): ?array
     {
         $response = $this->_client->post($this->_baseUri . $action, [
-            RequestOptions::JSON => $data
+            RequestOptions::JSON => $data,
+            'auth' => [
+                $this->_username,
+                $this->_password
+            ]
         ]);
 
         if ($response->getStatusCode() != 200) {

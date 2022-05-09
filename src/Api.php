@@ -118,11 +118,12 @@ class Api
                 'auth' => [
                     $this->_username,
                     $this->_password
-                ],
-                'http_errors' => false
+                ]
             ]);
         } catch (\Exception $e) {
             $this->_errors[] = 'Unexpected response from API: ' . $e->getMessage();
+
+            return null;
         }
 
         if ($response->getStatusCode() != 200) {

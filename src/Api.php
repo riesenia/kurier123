@@ -10,7 +10,6 @@ declare(strict_types=1);
 namespace Riesenia\Kurier123;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\RequestOptions;
 
 /**

@@ -111,13 +111,19 @@ class Api
      */
     protected function _callApi(string $action, array $data = []): ?array
     {
-        $response = $this->_client->post($this->_baseUri . $action, [
-            RequestOptions::JSON => $data,
-            'auth' => [
-                $this->_username,
-                $this->_password
-            ]
-        ]);
+        try {
+            $response = $this->_client->post($this->_baseUri . $action, [
+                RequestOptions::JSON => $data,
+                'auth' => [
+                    $this->_username,
+                    $this->_password
+                ]
+            ]);
+        } catch (\Exception $e) {
+            $this->_errors[] = 'Unexpected response from API: ' . $e->getMessage();
+
+            return null;
+        }
 
         if ($response->getStatusCode() != 200) {
             $this->_errors[] = 'Unable to fetch response from API. Status code: ' . $response->getStatusCode();
